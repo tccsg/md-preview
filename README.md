@@ -18,7 +18,7 @@
 通过检测文件的修改，由EventSource方式通知页面更新dom。
 
 #### 修复bug记录
-v1.0.2 ：修复windows下读取文件为空的bug
+v1.0.2 ：修复windows下读取文件为空的bug 
 
 
 ### github地址
