@@ -18,7 +18,9 @@
 通过检测文件的修改，由EventSource方式通知页面更新dom。
 
 #### 修复bug记录
-v1.0.2 ：修复windows下读取文件为空的bug 
+- v1.0.2：修复windows下读取文件为空的bug 
+
+- v1.0.3：模版文件名称修改，可自定义模版文件放在项目根目录下，模版名称```_dgmp_template.html```(后续版本会继续更新)
 
 
 ### github地址

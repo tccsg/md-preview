@@ -1,6 +1,6 @@
 {
   "name": "dg-mp",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Markdown文件编写实时预览",
   "main": "index.js",
   "bin": "./bin/dg-mp.js",
