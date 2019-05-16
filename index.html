@@ -3,6 +3,30 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, viewport-fit=cover" />
     <title></title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+    <script>
+      var source = new EventSource('/__dg_hmr')
+      source.onmessage = function (event) {
+        if (event.data === '\uD83D\uDC93') return
+        var res = JSON.parse(event.data)
+        if (res.action) {
+          if (res.action === 'change') {
+            renderHTML(res.data)
+          }
+          if (res.action === 'sync') {
+            console.log('建立链接，首次载入内容')
+            renderHTML(res.data)
+          }
+        }
+      }
+      function renderHTML (data) {
+        let _html = `${data}`
+        document.getElementById('content').innerHTML = _html
+        document.querySelectorAll('pre code').forEach((block) => {
+          hljs.highlightBlock(block);
+        });
+      }
+    </script>
     <link rel="stylesheet" href="assets/css/index.css" />
     <link rel="stylesheet" href="assets/styles/a11y-dark.css">
   </head>
@@ -19,8 +43,5 @@
         </div>
       </div>
     </div>
-    <script src="./assets/js/readfile.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
   </body>
 </html>

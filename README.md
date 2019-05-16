@@ -1,24 +1,25 @@
 #### 效果图
-![readme3.gif](https://upload-images.jianshu.io/upload_images/6080408-fa59ebf8a1c1801e.gif?imageMogr2/auto-orient/strip)
+![readme3.gif](./images/readme3.gif)
 
-
-在编写readme过程中 只要保存修改 就会即使显示在浏览器中预览，不用手动点击浏览器刷新按钮。
+在编写readme过程中 只要保存修改 就会及时显示在浏览器中预览，通过热更新的方式。
 
 #### 用法
 因为已经发布到npm上面，所以可以通过```npm i dg-mp```或者```yarn add dg-mp```安装
 然后在```package.json```中添加scripts
 ```json
 "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dg-mp": "dg-mp"
-  }
+  "dg-mp": "dg-mp"
+}
 ```
 最后在命令行中输入```npm run dg-mp```或者```yarn dg-mp```会自动打开浏览器。
-默认监听 4000端口 可以通过 ```npm run dg-mp 40001```修改监听端口
+默认监听 4000端口 可以通过 ```npm run dg-mp 4001```修改监听端口
 
 #### 原理
-通过检测文件的修改，通知浏览器自动刷新，之后将实现热更新实时预览。
+通过检测文件的修改，由EventSource方式通知页面更新dom。
+
+#### 修复bug记录
+v1.0.2 ：修复windows下读取文件为空的bug
+
 
 ### github地址
 [md-preview](https://github.com/tccsg/md-preview)
-
